@@ -1,11 +1,18 @@
 buildscript {
-    ext.kotlin_version = '1.2.10'
+    ext {
+        kotlinVersion = '1.2.10'
+        springBootVersion = '2.0.0.M7'
+        springCloudVersion = 'Finchley.M5'
+    }
 
     repositories {
         mavenCentral()
+        maven { url "https://repo.spring.io/milestone" }
     }
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "org.jetbrains.kotlin:kotlin-allopen:$kotlinVersion"
     }
 }
 
@@ -15,5 +22,6 @@ version '1.0.0-SNAPSHOT'
 allprojects {
     repositories {
         mavenCentral()
+        maven { url "https://repo.spring.io/milestone" }
     }
 }
