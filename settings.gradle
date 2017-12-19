@@ -1,0 +1,4 @@
+rootProject.name = 'little-squirrel'
+
+include ':oauth2'
+
